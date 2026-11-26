@@ -20,11 +20,11 @@
 </td>
 <td width="33%" valign="top">
 <h3>Public proof</h3>
-<p>10 repositories · 0 stars</p>
+<p>12 repositories · 0 stars</p>
 </td>
 <td width="33%" valign="top">
 <h3>Momentum</h3>
-<p>25 contributions · 8 active days · 3 day streak</p>
+<p>40 contributions · 7 active days · 3 day streak</p>
 </td>
 </tr>
 </table>
@@ -44,11 +44,12 @@
 ## 🚀 Infrastructure shipped
 
 <!-- REPOS:START -->
+- **[Sistem-Verifikasi-Pensiunan](https://github.com/yunjacqwu/Sistem-Verifikasi-Pensiunan)** — Aplikasi web untuk verifikasi kelangsungan hidup pensiunan Dana Pensiun Pegawai Perum Peruri
 - **[yunjacs-shoe-website](https://github.com/yunjacqwu/yunjacs-shoe-website)** — Build Shoe Website with HTML, CSS, JS, PHP, MYSQL (Work In Progress)
 - **[inventory-app](https://github.com/yunjacqwu/inventory-app)** — Aplikasi web untuk mencatat stok dan pemakaian barang kendaraan
-- **[Sistem-Verifikasi-Pensiunan](https://github.com/yunjacqwu/Sistem-Verifikasi-Pensiunan)** — Aplikasi web untuk verifikasi kelangsungan hidup pensiunan Dana Pensiun Pegawai Perum Peruri
 - **[personal-portfolio](https://github.com/yunjacqwu/personal-portfolio)** — Personal portfolio website built with Next.js and TypeScript.
-- **[Security-Report](https://github.com/yunjacqwu/Security-Report)** — Aplikasi pelaporan keamanan dan kebersihan berbasis web
+- **[UAS](https://github.com/yunjacqwu/UAS)**
+- **[ci4-customer](https://github.com/yunjacqwu/ci4-customer)** — end of semester project
 <!-- REPOS:END -->
 
 ## 🛠️ Platform toolkit
