@@ -17,6 +17,8 @@ import os
 from html import escape
 
 # ============================ THEMES ============================
+GH_FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
+
 # Ganti warna di sini kalau mau bikin tema sendiri.
 THEMES = {
     "newsprint": {
@@ -62,6 +64,63 @@ THEMES = {
         "glows": ["#4ade80", "#facc15"],
         "font_title": "'Segoe UI', Inter, Helvetica, Arial, sans-serif",
         "font_body": "'Segoe UI', Inter, Helvetica, Arial, sans-serif",
+    },
+
+    # ---------- Tema yang ngikutin warna resmi GitHub (Primer) ----------
+    # Dark default GitHub + hijau kontribusi asli
+    "github-dark": {
+        "bg": "#010409", "panel": "#0d1117",
+        "border": "#30363d", "panel_border": "#30363d",
+        "title": "#f0f6fc", "sub": "#9198a1", "text": "#e6edf3", "muted": "#9198a1",
+        "accent": "#4493f8", "track": "#21262d", "empty": "#151b23",
+        "levels": ["#0e4429", "#006d32", "#26a641", "#39d353"],
+        "bars": ["#4493f8", "#3fb950", "#ab7df8", "#d29922", "#f85149", "#db61a2"],
+        "glows": [],
+        "font_title": GH_FONT, "font_body": GH_FONT,
+    },
+    # Tema "Dark dimmed" GitHub (abu kebiruan, lebih lembut di mata)
+    "github-dimmed": {
+        "bg": "#1c2128", "panel": "#22272e",
+        "border": "#444c56", "panel_border": "#444c56",
+        "title": "#cdd9e5", "sub": "#768390", "text": "#adbac7", "muted": "#768390",
+        "accent": "#539bf5", "track": "#2d333b", "empty": "#2d333b",
+        "levels": ["#033a16", "#1b4721", "#2b6a30", "#46954a"],
+        "bars": ["#539bf5", "#57ab5a", "#b083f0", "#c69026", "#e5534b", "#c96198"],
+        "glows": [],
+        "font_title": GH_FONT, "font_body": GH_FONT,
+    },
+    # Tema "Light" GitHub — cocok buat yang buka GitHub pakai mode terang
+    "github-light": {
+        "bg": "#f6f8fa", "panel": "#ffffff",
+        "border": "#d1d9e0", "panel_border": "#d1d9e0",
+        "title": "#1f2328", "sub": "#59636e", "text": "#1f2328", "muted": "#59636e",
+        "accent": "#0969da", "track": "#eff2f5", "empty": "#eff2f5",
+        "levels": ["#aceebb", "#4ac26b", "#2da44e", "#116329"],
+        "bars": ["#0969da", "#1a7f37", "#8250df", "#9a6700", "#cf222e", "#bf3989"],
+        "glows": [],
+        "font_title": GH_FONT, "font_body": GH_FONT,
+    },
+    # Dark GitHub dengan aksen biru (grafik kontribusi biru, bukan hijau)
+    "github-blue": {
+        "bg": "#010409", "panel": "#0d1117",
+        "border": "#30363d", "panel_border": "#1f6feb",
+        "title": "#f0f6fc", "sub": "#9198a1", "text": "#e6edf3", "muted": "#9198a1",
+        "accent": "#58a6ff", "track": "#21262d", "empty": "#151b23",
+        "levels": ["#0c2d6b", "#0d419d", "#1f6feb", "#58a6ff"],
+        "bars": ["#58a6ff", "#388bfd", "#79c0ff", "#1f6feb", "#a5d6ff", "#8b949e"],
+        "glows": [],
+        "font_title": GH_FONT, "font_body": GH_FONT,
+    },
+    # Palet Halloween resmi dari grafik kontribusi GitHub
+    "github-halloween": {
+        "bg": "#010409", "panel": "#0d1117",
+        "border": "#30363d", "panel_border": "#30363d",
+        "title": "#f0f6fc", "sub": "#9198a1", "text": "#e6edf3", "muted": "#9198a1",
+        "accent": "#fa7a18", "track": "#21262d", "empty": "#151b23",
+        "levels": ["#631c03", "#bd561d", "#fa7a18", "#fddf68"],
+        "bars": ["#fa7a18", "#fddf68", "#bd561d", "#ab7df8", "#3fb950", "#8b949e"],
+        "glows": [],
+        "font_title": GH_FONT, "font_body": GH_FONT,
     },
 }
 
