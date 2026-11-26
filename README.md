@@ -78,8 +78,3 @@ HTML · 1%
   <img src="https://www.gitskins.com/api/section/stack?username=yunjacqwu&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F96630242%3Fu%3Dbfbee47fabeb25302210fa32ef66c319b4f6be2e%26v%3D4" alt="yunjacqwu stack visual" />
 </p>
 
-## Keep it moving
-
-<p align="center">
-  <img src="https://www.gitskins.com/api/section/social?username=yunjacqwu&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F96630242%3Fu%3Dbfbee47fabeb25302210fa32ef66c319b4f6be2e%26v%3D4" alt="yunjacqwu social visual" />
-</p>
