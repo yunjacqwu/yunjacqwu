@@ -36,7 +36,7 @@
 ## 📈 Activity forecast
 
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/heatmap?username=yunjacqwu&theme=github-dark" alt="yunjacqwu contribution activity" />
+  <img src="./assets/activity.svg" alt="yunjacqwu contribution activity" />
 </p>
 
 ---
@@ -56,5 +56,7 @@
 <p><code>yunjacqwu@github:~$ toolbox --list</code></p>
 
 <p align="center">
-  <img src="https://www.gitskins.com/api/section/stack?username=yunjacqwu&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F96630242%3Fu%3Dbfbee47fabeb25302210fa32ef66c319b4f6be2e%26v%3D4" alt="yunjacqwu stack visual" />
+  <img src="./assets/stack.svg" alt="yunjacqwu language stack" />
 </p>
+
+---
