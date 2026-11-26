@@ -35,11 +35,12 @@ jobs:
 
       - name: Update README
         env:
+          GH_TOKEN: ${{ github.token }}
           OWNER: ${{ github.repository_owner }}
           MAX_REPOS: "6" # jumlah repo yang ditampilkan
         run: |
           python3 - <<'EOF'
-          import json, os, re
+          import json, os, re, subprocess
 
           owner = os.environ["OWNER"]
           limit = int(os.environ["MAX_REPOS"])
@@ -48,48 +49,72 @@ jobs:
           cal = json.load(open("/tmp/contrib.json"))["data"]["user"][
               "contributionsCollection"]["contributionCalendar"]
 
-          # Hitung streak (hari ini belum commit = streak masih dihitung dari kemarin)
-          days = [d for w in cal["weeks"] for d in w["contributionDays"]]
-          days.sort(key=lambda d: d["date"])
+          # Kontribusi, hari aktif, dan streak
+          days = sorted((d for w in cal["weeks"] for d in w["contributionDays"]),
+                        key=lambda d: d["date"])
+          active_days = sum(1 for d in days if d["contributionCount"] > 0)
           if days and days[-1]["contributionCount"] == 0:
-              days = days[:-1]
+              days = days[:-1]  # hari ini belum commit = streak dihitung dari kemarin
           streak = 0
           for d in reversed(days):
               if d["contributionCount"] == 0:
                   break
               streak += 1
 
+          own = [r for r in repos if not r["fork"]]
+          stars = sum(r["stargazers_count"] for r in own)
+
           readme = open("README.md", encoding="utf-8").read()
 
-          # Angka-angka di README
-          readme = re.sub(r"PUBLIC_REPOS = \d+",
-                          f'PUBLIC_REPOS = {user["public_repos"]}', readme)
-          readme = re.sub(r"COMMUNITY   = \d+ followers",
-                          f'COMMUNITY   = {user["followers"]} followers', readme)
-          readme = re.sub(r"<code>\d+ contributions</code>",
-                          f'<code>{cal["totalContributions"]} contributions</code>', readme)
-          readme = re.sub(r"<code>\d+ day streak</code>",
-                          f"<code>{streak} day streak</code>", readme)
+          readme = re.sub(r"\d+ repositories · \d+ stars?",
+                          f'{user["public_repos"]} repositories · {stars} stars', readme)
+          readme = re.sub(r"\d+ contributions · \d+ active days · \d+ day streak",
+                          f'{cal["totalContributions"]} contributions · '
+                          f'{active_days} active days · {streak} day streak', readme)
 
-          # Daftar project (format sama seperti aslinya)
-          repos = [r for r in repos if r["name"].lower() != owner.lower()][:limit]
+          # Daftar project
+          shown = [r for r in repos
+                   if r["name"].lower() != owner.lower() and not r["archived"]][:limit]
           lines = []
-          for r in repos:
+          for r in shown:
               line = f'- **[{r["name"]}]({r["html_url"]})**'
               if r["description"]:
                   line += f' — {r["description"].strip()}'
-              line += f' · ⭐ {r["stargazers_count"]}'
+              if r["stargazers_count"] > 0:
+                  line += f' · ⭐ {r["stargazers_count"]}'
               lines.append(line)
           block = "<!-- REPOS:START -->\n" + "\n".join(lines) + "\n<!-- REPOS:END -->"
           readme = re.sub(r"<!-- REPOS:START -->.*?<!-- REPOS:END -->",
                           lambda _: block, readme, flags=re.S)
 
           open("README.md", "w", encoding="utf-8").write(readme)
+
+          # Data untuk kartu SVG (activity + stack)
+          languages = {}
+          for r in own:
+              if r["name"].lower() == owner.lower():
+                  continue
+              res = subprocess.run(["gh", "api", f'repos/{owner}/{r["name"]}/languages'],
+                                   capture_output=True, text=True)
+              if res.returncode == 0:
+                  for lang, size in json.loads(res.stdout).items():
+                      languages[lang] = languages.get(lang, 0) + size
+          all_days = sorted((d for w in cal["weeks"] for d in w["contributionDays"]),
+                            key=lambda d: d["date"])
+          json.dump({
+              "owner": owner,
+              "total": cal["totalContributions"],
+              "days": [{"date": d["date"], "count": d["contributionCount"]} for d in all_days],
+              "languages": languages,
+          }, open("/tmp/cards.json", "w"))
           EOF
+
+      - name: Generate kartu SVG
+        run: python3 scripts/generate_cards.py --theme midnight --data /tmp/cards.json --out assets
 
       - name: Commit kalau ada perubahan
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md assets
           git diff --staged --quiet || (git commit -m "chore: update profile stats" && git push)
