@@ -2,7 +2,7 @@ name: Update Profile README
 
 on:
   schedule:
-    - cron: "0 0 * * *" # tiap hari jam 07:00 WIB
+    - cron: "0 */6 * * *" # tiap hari jam 07:00 WIB
   workflow_dispatch: # bisa dijalankan manual dari tab Actions
 
 permissions:
