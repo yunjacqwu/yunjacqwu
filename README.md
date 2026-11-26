@@ -1,11 +1,3 @@
-## Delivery pipeline
-
-<p align="center">
-  <img src="https://www.gitskins.com/api/section/hero?username=yunjacqwu&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F96630242%3Fu%3Dbfbee47fabeb25302210fa32ef66c319b4f6be2e%26v%3D4" alt="yunjacqwu hero visual" />
-</p>
-
-**bbrian** · Frontend or full-stack engineer
-
 ## Operating principles
 
 <pre><code>ROLE        = Frontend or full-stack engineer
