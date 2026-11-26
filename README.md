@@ -10,42 +10,13 @@
 
 ---
 
-**10** public repositories, **0** stars, **25** contributions in the last year, a longest streak of **3** days and **2** followers.
+<h2>What teams can evaluate quickly</h2>
 
-<table>
+<table width="100%">
 <tr>
-<td width="44%" valign="top">
-
-### Top stories
-
-<b><a href="https://github.com/yunjacqwu/yunjacs-shoe-website">yunjacs-shoe-website</a></b> · ★ 0<br/><sub>Build Shoe Website with HTML, CSS, JS, PHP, MYSQL (Work In Progress)</sub><br/><br/>
-<a href="https://github.com/Avisss10/Security-Report">Security-Report</a> · ★ 0<br/><sub>FINAL</sub><br/><br/>
-<a href="https://github.com/yunjacqwu/inventory-app">inventory-app</a> · ★ 0<br/><sub>Aplikasi web untuk mencatat stok dan pemakaian barang kendaraan</sub><br/><br/>
-<a href="https://github.com/yunjacqwu/Sistem-Verifikasi-Pensiunan">Sistem-Verifikasi-Pensiunan</a> · ★ 0<br/><sub>Aplikasi web untuk verifikasi kelangsungan hidup pensiunan Dana Pensiun Pegawai Perum Peruri</sub>
-
-</td>
-<td width="28%" valign="top">
-
-### By the numbers
-
-Repositories: <b>10</b><br/>
-Stars: <b>0</b><br/>
-Contributions: <b>25</b><br/>
-Longest streak: <b>3 days</b><br/>
-Followers: <b>2</b>
-
-</td>
-<td width="28%" valign="top">
-
-### Languages
-
-JavaScript · 71%<br/>
-PHP · 20%<br/>
-CSS · 5%<br/>
-Less · 2%<br/>
-HTML · 1%
-
-</td>
+<td width="33%" valign="top"><h3>Role fit</h3><p>Frontend or full-stack engineer · JavaScript · PHP · CSS</p></td>
+<td width="33%" valign="top"><h3>Public proof</h3><p>10 repositories · 0 stars</p></td>
+<td width="33%" valign="top"><h3>Momentum</h3><p>25 contributions · 8 active days</p></td>
 </tr>
 </table>
 
