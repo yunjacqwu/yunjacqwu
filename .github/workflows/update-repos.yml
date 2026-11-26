@@ -110,7 +110,7 @@ jobs:
           EOF
 
       - name: Generate kartu SVG
-        run: python3 scripts/generate_cards.py --theme midnight --data /tmp/cards.json --out assets
+        run: python3 scripts/generate_cards.py --github-halloween --data /tmp/cards.json --out assets
 
       - name: Commit kalau ada perubahan
         run: |
